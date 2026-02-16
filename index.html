@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>otazocka</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 24px;
+        }
+        
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .response {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        #emoji {
+            width: 250px;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>budes ma lubkat navzdy? :33</h1>
+        <img src="zaciatok.gif" alt="zlateocka" width="200">
+        <div class="buttons">
+            <button id="yesBtn">ano laskaa</button>
+            <button id="noBtn">Nie</button>
+        </div>
+        
+        <div id="response" class="response hidden">
+            och laska pod sukattt😈
+            <br>
+            <img id="emoji" src="odpoved.gif" alt="odpoved" >
+        </div>
+    </div>
+
+    <script>
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const response = document.getElementById('response');
+        let fontSize = 16;
+
+        noBtn.addEventListener('click', function() {
+            fontSize += 10;
+            yesBtn.style.fontSize = fontSize + 'px';
+            yesBtn.style.padding = (fontSize / 2) + 'px ' + (fontSize * 1.5) + 'px';
+        });
+
+        yesBtn.addEventListener('click', function() {
+            response.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
